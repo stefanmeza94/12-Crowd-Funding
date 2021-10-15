@@ -1,0 +1,211 @@
+:root {
+  /* Primary colors */
+  --moderate-cyan: hsl(176, 50%, 47%);
+  --dark-cyan: hsl(176, 72%, 28%);
+
+  /* Neutral colors */
+  --black: hsl(0, 0%, 0%);
+  --dark-gray: hsl(0, 0%, 48%);
+
+  /* Font */
+  --ff-primary: 'Commissioner', sans-serif;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  font-family: var(--ff-primary);
+  font-size: 16px;
+  margin: 0;
+}
+
+.destkop-nav {
+  display: none;
+}
+
+.mobile-nav.active {
+  display: block;
+}
+
+.mobile-nav {
+  display: none;
+  position: absolute;
+  z-index: 5;
+  top: 88px;
+  left: 24px;
+  right: 24px;
+  background-color: white;
+  border-radius: 8px;
+}
+
+.mobile-nav ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.mobile-nav ul li {
+  padding: 24px;
+}
+
+.mobile-nav ul li:nth-child(1),
+.mobile-nav ul li:nth-child(2) {
+  border-bottom: 1px solid #d3d3d3;
+}
+
+.mobile-nav ul li a {
+  text-decoration: none;
+  color: var(--black);
+  font-size: 18px;
+  line-height: 22px;
+}
+
+.pop-up {
+  display: none;
+}
+
+.container {
+  width: 100%;
+  min-height: 100vh;
+  background-color: #f2f2f2;
+}
+
+.header {
+  background: linear-gradient(to top, rgba(0, 0, 0, 0.00001) 30%, rgba(0, 0, 0, 0.6)), url('./images/image-hero-mobile.jpg');
+  background-size: cover;
+  height: 300px;
+}
+
+.nav {
+  padding: 32px 24px 0;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.nav h3 {
+  margin: 0;
+  color: white;
+  font-size: 24px;
+  font-weight: bold;
+}
+
+.wrapper {
+  padding: 0 24px;
+  /* max-width: 350px/ */
+}
+
+.article {
+  background-color: #fff;
+  border-radius: 8px;
+  border: 1px solid rgba(0, 0, 0, 0.0497193);
+  margin-bottom: 24px;
+}
+
+.one {
+  padding: 0 24px 40px;
+  margin-top: -65px;
+}
+
+.mastercraft-logo {
+  display: inline-block;
+  position: relative;
+  left: 50%;
+  top: -26px;
+  transform: translateX(-50%);
+}
+
+.one h2 {
+  max-width: 270px;
+  margin: 0 auto;
+  font-size: 20px;
+  font-weight: 700;
+  line-height: 24.46px;
+  color: #000;
+  text-align: center;
+  margin-bottom: 16px;
+}
+
+.one p {
+  text-align: center;
+  font-size: 14px;
+  line-height: 24px;
+  font-weight: 400;
+  color: var(--dark-gray);
+  margin-bottom: 24px;
+}
+
+.bookmark-wrapper {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.bookmark-wrapper .btn {
+  display: inline-block;
+  outline: none;
+  border: none;
+  padding: 18px 42px;
+  font-size: 16px;
+  font-weight: 700;
+  line-height: 19.57px;
+  border-radius: 33.5px;
+  background-color: var(--moderate-cyan);
+  color: #fff;
+}
+
+.bookmark-wrapper .bookmark-text {
+  display: none;
+}
+
+.two {
+  padding: 32px 25px 40px;
+}
+
+.two .number-section {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  margin-bottom: 24px;
+}
+
+.two .number-wrapper {
+  text-align: center;
+}
+
+.two .big-number {
+  font-size: 32px;
+  line-height: 39.14px;
+  font-weight: 700;
+  margin: 0;
+  margin-bottom: 9px;
+}
+
+.two .number-wrapper span {
+  display: inline-block;
+  font-size: 14px;
+  line-height: 17.12px;
+  color: var(--dark-gray);
+  margin-bottom: 24px;
+}
+
+.two .number-wrapper:nth-child(1) .number-wrapper-line,
+.two .number-wrapper:nth-child(2) .number-wrapper-line {
+  height: 1px;
+  width: 80px;
+  margin: 0 auto;
+  background-color: #c9c9c9;
+  margin-bottom: 24px;
+}
+
+.two .progress-bar {
+  height: 12px;
+  width: 218px;
+  margin: 0 auto;
+  background-color: var(--moderate-cyan);
+  border-radius: 33.5px;
+}
+
