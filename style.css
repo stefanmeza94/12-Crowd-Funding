@@ -169,8 +169,6 @@ body {
   align-items: center;
 }
 
-
-
 .bookmark-wrapper .bookmark-text {
   display: none;
 }
@@ -207,8 +205,7 @@ body {
   margin-bottom: 24px;
 }
 
-.two .number-wrapper:nth-child(1) .number-wrapper-line,
-.two .number-wrapper:nth-child(2) .number-wrapper-line {
+.two .number-wrapper .number-wrapper-line {
   height: 1px;
   width: 80px;
   margin: 0 auto;
@@ -216,12 +213,19 @@ body {
   margin-bottom: 24px;
 }
 
-.two .progress-bar {
+.two .progress-bar-wrapper {
   height: 12px;
   width: 218px;
   margin: 0 auto;
-  background-color: var(--moderate-cyan);
+  background-color: #f5f5f5;
   border-radius: 33.5px;
+}
+
+.two .progress-bar-wrapper .progress-bar {
+	border-radius: 33.5px;
+	height: 12px;
+  width: 75%;
+	background-color: var(--dark-cyan);
 }
 
 .three {
@@ -305,3 +309,210 @@ body {
 	padding: 15px 32px;
 	font-weight: 700;
 }
+
+.inactive  {
+	opacity: .5;
+}
+
+.inactive .bamboo-stand-btn {
+	background-color: #2F2F2F;
+	opacity: .5;
+}
+
+
+/************************ DESKTOP ****************************/
+@media (min-width: 768px) {
+	.header {
+		background: linear-gradient(to top, rgba(0, 0, 0, 0.00001) 30%, rgba(0, 0, 0, 0.6)), url(./images/image-hero-desktop.jpg);
+		background-size: cover;
+		background-position: center center;
+		height: 400px;
+	}
+	
+	.nav {
+		padding: 48px 75px 0;
+		max-width: 1100px;
+		margin: 0 auto;
+	}
+	
+	.hamburger-icon {
+		display: none;
+	}
+	
+	.mobile-nav {
+		display: none;
+	}
+	
+	.destkop-nav {
+		display: block;
+		list-style: none;
+		display: flex;
+		justify-content: center;
+		align-items: center;
+	}
+	
+	.destkop-nav li {
+		margin-left: 32px; 
+	}
+	
+	.destkop-nav li a {
+		text-decoration: none;
+		color: #fff;
+		font-size: 13px;
+		line-height: 15.9px;
+	}
+	
+	.destkop-nav li a:hover {
+		text-decoration: underline;
+		cursor: pointer;
+	}
+	
+	.article {
+		max-width: 736px;
+		padding: 48px;
+		padding-top: 0;
+	}
+	
+	.one h2 {
+		max-width: 100%;
+		font-size: 28px;
+		line-height: 34.24px;
+	}
+	
+	.one p {
+		font-size: 16px;
+		line-height: 19.57px;
+		margin-bottom: 40px;
+	}
+	
+	.bookmark-button {
+		display: flex;
+		justify-content: center;
+		align-items: center;
+		background-color: #f4f4f4;
+		border-radius: 33.5px;
+		width: 174px;
+		height: 56px;
+		position: relative;
+	}
+	
+	.bookmark-button:hover {
+		cursor: pointer;
+	}
+	
+	.bookmark-button:hover .bookmark-img{
+		opacity: 0.5;
+	}
+	
+	.bookmark-button .bookmark-img {
+		display: block;
+		position: absolute;
+		left: 0;
+	}
+	
+	.bookmark-wrapper .bookmark-text {
+		display: block;
+		margin: 0;
+		margin-left: 36px;
+		color: var(--dark-gray);
+		font-size: 16px;
+		/* line-height: 19.57px; */
+		font-weight: 700;
+	}
+	
+	/* BOOKMARED BUTTON */
+	/* .bookmarked {
+		background-color: #f4f8f9;	
+	} */
+	
+	
+	.two,
+	.three {
+		padding-top: 48px;
+	}
+	
+	.two .number-section {
+    flex-direction: row;
+	}
+	
+	.two .number-section .number-wrapper {
+		flex-basis: 33%;
+		text-align: left;
+		position: relative;
+		font-family: inherit;
+	}
+	
+	.two .number-wrapper .number-wrapper-line {
+    transform: rotate(90deg);
+		width: 63px;
+		position: absolute;
+		right: 5px;
+		bottom: 30px;
+		background-color: #000;
+		opacity: 0.15;
+	}
+
+	.two .progress-bar-wrapper {
+		height: 12px;
+		width: 100%;
+		margin: 0 auto;
+		background-color: #f5f5f5;
+		border-radius: 33.5px;
+	}
+	
+	.three h3 {
+		font-size: 20px;
+		line-height: 24.46px;
+		font-weight: 700;
+		margin-bottom: 35px;
+	}
+	
+	.three p {
+    font-size: 16px;
+    line-height: 30px;
+	}
+	
+	.three > p:nth-child(3) {
+		margin-top: 24px;
+    margin-bottom: 40px;
+	}
+	
+	.bamboo-stand {
+    padding: 38px 32px 32px;
+	} 
+	
+	.bamboo-stand-header {
+		display: flex;
+		justify-content: space-between;
+		align-items: center;
+		margin-bottom: 24px;
+	}
+	
+	.bamboo-stand h4 {
+    margin: 0;
+    font-size: 18px;
+    line-height: 22px;
+	}
+	
+	.bamboo-stand .bamboo-stand-price {
+    margin: 0;
+    font-size: 15px;
+    line-height: 18.35px;
+	}
+	
+	.bamboo-stand .bamboo-stand-content {
+    font-size: 16px;
+    line-height: 30px;
+	}
+	
+	.bamboo-stand-button {
+		display: flex;
+		justify-content: space-between;
+		align-items: center;
+	}
+	
+	.bamboo-stand .bamboo-stand-button .number-of-days {
+    margin: 0;
+	}
+}
+
