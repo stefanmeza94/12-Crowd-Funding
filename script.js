@@ -13,7 +13,6 @@ const gotItBtn = document.querySelector('.thanks-box-got-it');
 const overallSum = document.querySelector('.js-total-sum');
 const totalBackers = document.querySelector('.js-number-of-pledge');
 
-
 // convert textContent string with commas into number without commas
 function formatTotalValue(value) {
 	let valueCopy = value.split('');
