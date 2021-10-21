@@ -13,6 +13,13 @@ const gotItBtn = document.querySelector('.thanks-box-got-it');
 const overallSum = document.querySelector('.js-total-sum');
 const totalBackers = document.querySelector('.js-number-of-pledge');
 
+const progressBar = document.querySelector('.js-progress-bar');
+
+const bookmarkWrapper = document.querySelector('.js-bookmark-button');
+const bookmakredText = document.querySelector('.js-bookmark-text');
+
+
+
 // convert textContent string with commas into number without commas
 function formatTotalValue(value) {
 	let valueCopy = value.split('');
@@ -36,11 +43,28 @@ function formatComma(input) {
 	return comaValue.join('');
 }
 
-console.log(formatComma((98915).toString()));
-
-console.log(formatTotalValue('98,914') + 1);
+// calculate percentage
+function calcPercentage(partialValue, totalValue) {
+	return (100 * partialValue) / totalValue;
+}
 
 let priceToAdd = 0;
+
+// add diffrenet color when bookmark button is clicked
+bookmarkWrapper.addEventListener('click', function(e) {
+	if (e.target.nodeName === 'circle' || e.target.nodeName === 'path' || e.target === this || e.target.nodeName === 'P') {
+		bookmarkWrapper.classList.toggle('bookmarked');	
+		
+		if (bookmakredText.textContent === 'Bookmark') {
+			console.log(bookmakredText.textContent);
+			bookmakredText.textContent = 'Bookmarked';
+			bookmakredText.style.marginLeft = '10px';
+		} else {
+			bookmakredText.textContent = 'Bookmark';
+			bookmakredText.style.marginLeft = '16px';
+		}
+	}
+});
 
 // Mobile nav
 hamburger.addEventListener('click', function() {
@@ -86,11 +110,22 @@ choosePledge.addEventListener('click', function() {
 });
 
 // event listener for continue buttons 
-btnsContinue.forEach(btn => {
+let limitNumber = [0, 25, 75];
+
+btnsContinue.forEach((btn, i) => {
 	priceToAdd = 0;
 	btn.addEventListener('click', function(e) {
-		// grab value from input field and convert it to number
-		priceToAdd = +e.target.parentElement.querySelector('input').value;
+		let inputValue = e.target.parentElement.querySelector('input').value;
+
+		// continue button works only if user enter >= default value
+		if (inputValue >= limitNumber[i]) {
+			// grab value from input field and convert it to number
+			priceToAdd = +e.target.parentElement.querySelector('input').value;
+			
+			// if users try to continue with number less than default return
+		} else {
+			return;
+		}
 		
 		// display thanks for support
 		thanksBox.classList.add('active-thanks-box');
@@ -111,4 +146,9 @@ gotItBtn.addEventListener('click', function(e) {
 	// need to convert added values to string because formatComma function will not work with numbers
 	totalBackers.textContent = formatComma((formatTotalValue(totalBackers.textContent) + 1).toString());
 	overallSum.textContent = formatComma((formatTotalValue(overallSum.textContent) + priceToAdd).toString());
-})
+	
+	// update progress bar
+	progressBar.style.width = `${calcPercentage(formatTotalValue(overallSum.textContent), 100000)}%`;
+});
+
+
