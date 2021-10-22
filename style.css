@@ -231,6 +231,10 @@ body {
 	grid-template-columns: auto 1fr;
 }
 
+.stand-editions.active-article {
+	border: 1px solid #3CB3AB;
+}
+
 .stand-editions:not(.stand-editions:last-child) {
 	margin-bottom: 24px;
 }

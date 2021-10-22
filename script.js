@@ -40,7 +40,7 @@ function formatComma(input) {
 	// ocigledno je da nece raditi za vece brojeve ali ce da posluzi za xx,xxx i x,xxx
 	comaValue.splice(-3, 0, ',');
 	
-	return comaValue.join('');
+	return 	comaValue.join('');
 }
 
 // calculate percentage
@@ -142,11 +142,14 @@ gotItBtn.addEventListener('click', function(e) {
 	console.log(priceToAdd);
 	
 	// update overall sum and total backers
-	console.log(totalBackers.textContent);
+	// console.log(totalBackers.textContent);
 	// need to convert added values to string because formatComma function will not work with numbers
+	// console.log(overallSum.textContent);
+	console.log((formatTotalValue(overallSum.textContent) + priceToAdd).toString());
+	// console.log(priceToAdd);
+	
 	totalBackers.textContent = formatComma((formatTotalValue(totalBackers.textContent) + 1).toString());
 	overallSum.textContent = formatComma((formatTotalValue(overallSum.textContent) + priceToAdd).toString());
-	
 	// update progress bar
 	progressBar.style.width = `${calcPercentage(formatTotalValue(overallSum.textContent), 100000)}%`;
 });
